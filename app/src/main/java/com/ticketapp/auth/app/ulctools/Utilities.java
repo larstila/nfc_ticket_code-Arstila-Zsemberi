@@ -59,7 +59,29 @@ public class Utilities {
             }
         }
         return true;
+    }
 
+
+    /**
+     * Read card memory from starting page for defined amount of pages
+     *
+     * @param startPage            start page of read
+     * @param destination          where to store received data
+     * @return boolean value of success
+     */
+    public boolean readPage(int startPage, byte[] destination) {
+        return ul.readBinary(startPage, destination, 0);
+    }
+
+    /**
+     * Write input byte array on card
+     *
+     * @param srcBuffer     byte array
+     * @param startPage     first page on card to write data
+     * @return boolean value of success
+     */
+    public boolean writePage(byte[] srcBuffer, int startPage) {
+        return ul.writeBinary(startPage, srcBuffer, 0);
     }
 
     /**

@@ -5,7 +5,9 @@ import com.ticketapp.auth.app.main.TicketActivity;
 import com.ticketapp.auth.app.ulctools.Commands;
 import com.ticketapp.auth.app.ulctools.Utilities;
 
+import java.nio.ByteBuffer;
 import java.security.GeneralSecurityException;
+import java.util.Date;
 
 /**
  * TODO:
@@ -14,6 +16,9 @@ import java.security.GeneralSecurityException;
  * you code readable and write clarifying comments when necessary.
  */
 public class Ticket {
+    private static final String APP_ID = TicketActivity.outer.getString(R.string.app_id);
+    private static final String APP_VERSION = TicketActivity.outer.getString(R.string.app_version);
+
 
     /** Default keys are stored in res/values/secrets.xml **/
     private static final byte[] defaultAuthenticationKey = TicketActivity.outer.getString(R.string.default_auth_key).getBytes();
@@ -66,32 +71,76 @@ public class Ticket {
         return infoToShow;
     }
 
+    private static byte[] convertLongToByteArray(long nmb) {
+        return ByteBuffer.allocate(8).putLong(nmb).array();
+    }
+
+    private static long convertByteArrayToLong(byte[] array) {
+        return ByteBuffer.wrap(array).getLong();
+    }
+
+    private static byte[] convertIntToByteArray(int nmb) {
+        return ByteBuffer.allocate(4).putInt(nmb).array();
+    }
+
+    private static int convertByteArrayToInt(byte[] array) {
+        return ByteBuffer.wrap(array).getInt();
+    }
+
+    private static short readCounterFromCard() {
+        // Example of reading:
+        byte[] message = new byte[2];
+        boolean res = utils.readPage(41, message);
+
+        if (res) {
+            short number = (short) (message[0] + (message[1] << 8));
+            return number;
+        }
+
+        return 0;
+    }
+
     /**
      * Issue new tickets
      *
      * TODO: IMPLEMENT
      */
     public boolean issue(int daysValid, int uses) throws GeneralSecurityException {
-        boolean res;
-
         // Authenticate
-        res = utils.authenticate(authenticationKey);
+        boolean res = utils.authenticate(authenticationKey);
         if (!res) {
             Utilities.log("Authentication failed in issue()", true);
             infoToShow = "Authentication failed";
             return false;
         }
 
-        // Example of writing:
-        byte[] message = "info".getBytes();
-        res = utils.writePages(message, 0, 6, 1);
+        short currentCounter = readCounterFromCard();
+        if (currentCounter == 0) {
+            // try writing to the counter, since it might not have been written to
+            byte[] littleEndian = new byte[2];
+            littleEndian[0] = (byte) 1;
 
-        // Set information to show for the user
-        if (res) {
-            infoToShow = "Wrote: " + new String(message);
-        } else {
-            infoToShow = "Failed to write";
+            if (utils.writePage(littleEndian, 41)) {
+                infoToShow = "Counter initialized to 1";
+                currentCounter = 1;
+            } else {
+                Utilities.log("Couldn't read counter issue()", true);
+                infoToShow = "Couldn't read counter";
+                return false;
+            }
         }
+        // TODO: validation
+        utils.writePage(APP_ID.getBytes(), 4);
+        utils.writePage(APP_VERSION.getBytes(), 5);
+
+        // writing current counter to data
+        utils.writePage(convertIntToByteArray(currentCounter + uses), 6);
+
+        long currentMinutes = System.currentTimeMillis() / 1000 / 60;
+        long expirationDate = currentMinutes + daysValid * 24 * 60;
+
+        utils.writePages(convertLongToByteArray(expirationDate), 0, 7, 2);
+        infoToShow = "Successful!";
 
         return true;
     }
@@ -112,16 +161,55 @@ public class Ticket {
             return false;
         }
 
-        // Example of reading:
-        byte[] message = new byte[4];
-        res = utils.readPages(6, 1, message, 0);
+        byte[] appIdBytes = new byte[4];
+        byte[] versionBytes = new byte[4];
+        utils.readPage(4, appIdBytes);
+        utils.readPage(5, versionBytes);
 
-        // Set information to show for the user
-        if (res) {
-            infoToShow = "Read: " + new String(message);
-        } else {
-            infoToShow = "Failed to read";
+        if (!new String(appIdBytes).equals(APP_ID)) {
+            Utilities.log("Invalid app ID", true);
+            infoToShow = "Invalid app ID";
+            return false;
         }
+
+        if (!new String(versionBytes).equals(APP_VERSION)) {
+            Utilities.log("Invalid app version", true);
+            infoToShow = "Invalid app version";
+            return false;
+        }
+
+        byte[] expirationBytes = new byte[8];
+        utils.readPages(7, 2, expirationBytes, 0);
+
+        long expiration = convertByteArrayToLong(expirationBytes);
+        long currentTimeInMinutes = System.currentTimeMillis() / 1000 / 60;
+        if (currentTimeInMinutes > expiration) {
+            Utilities.log("Expired card!", false);
+            infoToShow = "Expired card!";
+            return false;
+        }
+
+        byte[] counterLimitBytes = new byte[4];
+        utils.readPage(6, counterLimitBytes);
+        int counterLimit = convertByteArrayToInt(counterLimitBytes);
+        int currentCounter = readCounterFromCard();
+
+        if (currentCounter >= counterLimit) {
+            Utilities.log("No more rides!", false);
+            infoToShow = "No more rides!";
+            return false;
+        }
+
+        // increment counter
+        byte[] littleEndian = new byte[2];
+        littleEndian[0] = (byte) 1;
+
+        if (utils.writePage(littleEndian, 41)) {
+            infoToShow = "Have fun! :^) 🎢 \nTickets left: " + (counterLimit - currentCounter - 1);
+        } else {
+            infoToShow = "Error while increasing counter!";
+        }
+
 
         return true;
     }
