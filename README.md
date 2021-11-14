@@ -1,0 +1,1 @@
+nfc_ticket_code-Arstila-Zsemberi
