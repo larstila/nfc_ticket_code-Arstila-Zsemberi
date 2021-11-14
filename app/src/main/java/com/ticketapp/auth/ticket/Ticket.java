@@ -32,6 +32,7 @@ public class Ticket {
     private final Boolean isValid = false;
     private final int remainingUses = 0;
     private final int expiryTime = 0;
+    private final String code = "moi dan";
 
     private static String infoToShow = "-"; // Use this to show messages
 

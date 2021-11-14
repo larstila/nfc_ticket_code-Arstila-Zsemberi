@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfc_ticket_code-Arstila-Zsemberi.iml" filepath="$PROJECT_DIR$/.idea/modules/nfc_ticket_code-Arstila-Zsemberi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/nfc_ticket_code-Arstila-Zsemberi.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/nfc_ticket_code-Arstila-Zsemberi.app.iml" />
     </modules>
   </component>
 </project>
