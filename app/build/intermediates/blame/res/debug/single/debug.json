@@ -12,16 +12,16 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-hdpi\\ic_action_add_key.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_inv_text.xml.flat",
-        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable\\button_inv_text.xml"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_checkbox_checked.png.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_checked.png"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_list_icon.png.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-hdpi\\ic_list_icon.png"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_inv_text.xml.flat",
+        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable\\button_inv_text.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_keys.png.flat",
@@ -36,12 +36,12 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-hdpi\\ic_checkbox_checked.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_data_view.xml.flat",
-        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\layout\\fragment_data_view.xml"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_log_file.png.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xxhdpi\\ic_log_file.png"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_data_view.xml.flat",
+        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\layout\\fragment_data_view.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\menu_popup_menu.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-mdpi\\ic_action_show_console.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\5971f3a89ffb6bfcd466bd26a390798b\\support-compat-26.1.0\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_archive.png.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-mdpi\\ic_archive.png"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\5971f3a89ffb6bfcd466bd26a390798b\\support-compat-26.1.0\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
@@ -136,12 +136,12 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-mdpi\\ic_list_icon.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_delete.png.flat",
-        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_delete.png"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\animator_slide_in.xml.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\animator\\slide_in.xml"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_delete.png.flat",
+        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_delete.png"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_file.png.flat",
@@ -320,12 +320,12 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xxhdpi\\checkbox.xml"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\5971f3a89ffb6bfcd466bd26a390798b\\support-compat-26.1.0\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_checkbox_unchecked.png.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_unchecked.png"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\5971f3a89ffb6bfcd466bd26a390798b\\support-compat-26.1.0\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
@@ -364,20 +364,20 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_overflow.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\1f5e5a3749811a09444f656c64df9871\\support-media-compat-26.1.0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
         "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\1f5e5a3749811a09444f656c64df9871\\support-media-compat-26.1.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\menu_archive_cbar.xml.flat",
-        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\menu\\archive_cbar.xml"
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\1f5e5a3749811a09444f656c64df9871\\support-media-compat-26.1.0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\menu_fragment_tools.xml.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\menu\\fragment_tools.xml"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\menu_archive_cbar.xml.flat",
+        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\menu\\archive_cbar.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -536,16 +536,16 @@
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-hdpi\\ic_action_show_console.png"
     },
     {
-        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_checkbox_unchecked.png.flat",
-        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xxhdpi\\ic_checkbox_unchecked.png"
-    },
-    {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
         "source": "C:\\Users\\zsemb\\.gradle\\caches\\transforms-2\\files-2.1\\1f5e5a3749811a09444f656c64df9871\\support-media-compat-26.1.0\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\menu_my.xml.flat",
         "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\menu\\my.xml"
+    },
+    {
+        "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_checkbox_unchecked.png.flat",
+        "source": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\src\\main\\res\\drawable-xxhdpi\\ic_checkbox_unchecked.png"
     },
     {
         "merged": "C:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_key_list.xml.flat",

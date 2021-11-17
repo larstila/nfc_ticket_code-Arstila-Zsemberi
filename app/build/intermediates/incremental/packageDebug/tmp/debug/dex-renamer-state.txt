@@ -1,4 +1,4 @@
-#Sun Nov 14 16:27:14 EET 2021
+#Tue Nov 16 13:15:46 EET 2021
 base.0=C\:\\Coding\\NetworkSecurity\\nfc_ticket_code-Arstila-Zsemberi\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
