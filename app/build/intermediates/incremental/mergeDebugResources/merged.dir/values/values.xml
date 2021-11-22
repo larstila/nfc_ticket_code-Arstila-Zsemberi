@@ -103,6 +103,7 @@
     <string name="key_in_use">"Key in use: "</string>
     <string name="key_save_hint">"will be saved to key list"</string>
     <string name="log_saved_msg">"Log data saved"</string>
+    <string name="master_secret">OCTOPUSES_ARE_COOL</string>
     <string name="menu_dump">Dump</string>
     <string name="menu_keys">Keys</string>
     <string name="menu_log">Log</string>
@@ -123,7 +124,7 @@
     <string name="validate_mode">Validate</string>
     <string name="write_key_info">"This function lets you change the authentication key on an Ultralight C tag. The authentication key is stored on pages 44–47, and if the pages are protected by the AUTH settings, then you must set authentication enabled before attempting to write the key.\n\nChoose the new key from the spinner list."</string>
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionOverflowButtonStyle">@style/MyOverFlow</item>
         <item name="android:buttonStyle">@style/MyButtonTheme</item>

@@ -196,14 +196,14 @@ public class Ticket {
 
     private static byte[] writeAppId(int page) {
         byte[] appIdBytes = APP_ID.getBytes();
-        utils.writePage(APP_ID.getBytes(), 4);
+        utils.writePage(APP_ID.getBytes(), page);
 
         return appIdBytes;
     }
 
     private static byte[] writeAppVersion(int page) {
         byte[] appVersionBytes = APP_VERSION.getBytes();
-        utils.writePage(APP_VERSION.getBytes(), 5);
+        utils.writePage(APP_VERSION.getBytes(), page);
 
         return appVersionBytes;
     }
@@ -235,14 +235,36 @@ public class Ticket {
     private static final int PAGE_MAC = 9;
 
     public boolean issue(int daysValid, int uses) throws GeneralSecurityException {
-        // Authenticate
-        boolean res = utils.authenticate(authenticationKey);
-        if (!res) {
-            Utilities.log("Authentication failed in issue()", true);
-            infoToShow = "Authentication failed";
+        // check app id
+        byte[] appIdBytes = new byte[4];
+        utils.readPage(PAGE_APP_ID, appIdBytes);
 
-            writeLog(LogType.ISSUE, new byte[] { 1, 0, 0, 0 });
-            return false;
+        // card has already been written to by our app
+        if (new String(appIdBytes).equals(APP_ID)) {
+            byte[] uuidBytes = new byte[4];
+            utils.readPage(PAGE_UID, uuidBytes);
+
+            byte[] privateKey = generatePrivateKeyFromUid(uuidBytes);
+
+            // Authenticate
+            boolean res = utils.authenticate(privateKey);
+            if (!res) {
+                Utilities.log("Authentication failed in issue()", true);
+                infoToShow = "Authentication failed";
+
+                writeLog(LogType.ISSUE, new byte[] { 1, 0, 0, 0 });
+                return false;
+            }
+        } else {
+            // Authenticate
+            boolean res = utils.authenticate(authenticationKey);
+            if (!res) {
+                Utilities.log("Authentication failed in issue()", true);
+                infoToShow = "Authentication failed";
+
+                writeLog(LogType.ISSUE, new byte[] { 1, 0, 0, 0 });
+                return false;
+            }
         }
 
         // counter of card
@@ -262,7 +284,7 @@ public class Ticket {
         utils.writePages(privateKey, 0, 44, 4);
 
         // page 5: app id
-        byte[] appIdBytes = writeAppId(PAGE_APP_ID);
+        appIdBytes = writeAppId(PAGE_APP_ID);
 
         // page 6: app version
         byte[] appVersionBytes = writeAppVersion(PAGE_APP_VERSION);
@@ -278,6 +300,12 @@ public class Ticket {
         byte[] macBytes = calculateMacBytes(appIdBytes, appVersionBytes, counterLimitBytes,
                                             expirationBytes, uuidBytes);
         utils.writePage(macBytes, PAGE_MAC);
+
+        // write from which page we need auth
+        byte[] littleEndian = new byte[2];
+        littleEndian[0] = (byte) 6;
+
+        utils.writePage(littleEndian, 42);
 
         infoToShow = "Successful!";
 
@@ -323,6 +351,18 @@ public class Ticket {
         byte[] versionBytes = new byte[4];
         utils.readPage(PAGE_APP_VERSION, versionBytes);
 
+        boolean allZero = true;
+        for (int i = 0; i < versionBytes.length && allZero; i++) {
+            if (versionBytes[i] != 0) allZero = false;
+        }
+        // cannot read encrypted data
+        if (allZero) {
+            Utilities.log("Failed authentication", true);
+            infoToShow = "Failed authentication";
+
+            writeLog(LogType.RIDE_USE, new byte[] { 2, 0, 0, 0 });
+            return false;
+        }
         if (!new String(versionBytes).equals(APP_VERSION)) {
             Utilities.log("Invalid app version", true);
             infoToShow = "Invalid app version";
@@ -331,10 +371,10 @@ public class Ticket {
             return false;
         }
 
-        byte[] expirationBytes = new byte[8];
+        byte[] expirationBytes = new byte[4];
         utils.readPage(PAGE_EXPIRATION_DATE, expirationBytes);
 
-        long expiration = convertByteArrayToLong(expirationBytes);
+        int expiration = convertByteArrayToInt(expirationBytes);
         long currentTimeInMinutes = System.currentTimeMillis() / 1000 / 60;
         if (currentTimeInMinutes > expiration) {
             Utilities.log("Expired card!", false);

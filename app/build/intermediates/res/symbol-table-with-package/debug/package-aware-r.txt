@@ -251,6 +251,7 @@ string issue_mode
 string key_in_use
 string key_save_hint
 string log_saved_msg
+string master_secret
 string menu_dump
 string menu_keys
 string menu_log
